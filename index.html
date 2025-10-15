@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown timer</title>
+    <link 
+      rel="stylesheet" 
+      href="https://fonts.googleapis.com/css?family=Lato"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+  <header style="width:100vw; max-width:100%; display:flex; align-items:center; justify-content:flex-start; padding: 1.2rem 2rem 1.2rem 2rem; background:rgba(255,255,255,0.85); box-shadow:0 2px 8px rgba(0,0,0,0.04); margin-bottom:2rem; position:relative; z-index:10;">
+    <div style="display:flex; flex-direction:column; align-items:flex-start;">
+      <span style="font-size:2rem; font-weight:bold; color:#1976d2; letter-spacing:1px;">The CountDown Timer</span>
+      <span style="font-size:1rem; color:#555; margin-top:0.2rem; font-style:italic;">"Every second counts. Make your moments matter!"</span>
+    </div>
+    <input type="file" id="bg-upload" accept="image/*" style="display:none;" />
+  <button class="theme-switcher" id="bg-upload-btn" type="button" style="margin-right:10rem;">Custom Background</button>
+  <button class="theme-switcher" id="theme-switcher" type="button">Switch Theme</button>
+     
+      <label style="margin-right:1.5rem; font-size:1rem;">
+        <input type="checkbox" id="toggle-sound" checked style="vertical-align:middle; margin-right:0.3rem;" /> Sound
+      </label>
+      <label style="margin-right:1.5rem; font-size:1rem;">
+        <input type="checkbox" id="toggle-confetti" checked style="vertical-align:middle; margin-right:0.3rem;" /> Animation
+      </label>
+  </header>
+  
+  <section class="coming-soon">
+      <div>
+        <h2 style="text-align:center; width:100%;">Counting down</h2>
+        <!-- Custom date input form -->
+        <b><form id="countdown-form" style="margin-bottom:4rem; font-size: 2rem; text-align:center;">
+        <label for="date-input">Set Countdown Date And Time:</label>
+        <input style="font-size: 1.5rem;" type="datetime-local" id="date-input" name="date-input" required>
+        <button style="font-size: 1.5rem;" type="submit">Start Countdown</button>
+        </form></b>
+  <div class="countdown">
+          <div class="container-day">
+            <h3 class="day">Time</h3>
+            <h3>Day</h3>
+          </div>
+
+          <div class="container-hour">
+            <h3 class="hour">Time</h3>
+            <h3>hour</h3>
+          </div> 
+
+          <div class="container-minute">
+            <h3 class="minute">Time</h3>
+            <h3>minute</h3>
+          </div>
+
+          <div class="container-second">
+            <h3 class="second">Time</h3>
+            <h3>Second</h3>
+          </div>
+        </div>
+        <!-- Confetti/Fireworks canvas -->
+        <canvas id="confetti-canvas" style="position:fixed; pointer-events:none; top:0; left:0; width:100vw; height:100vh; z-index:2000; display:none;"></canvas>
+        <!-- Countdown complete popup modal -->
+        <div id="countdown-popup" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4); z-index:1000; align-items:center; justify-content:center;">
+          <div style="background:#fff; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.2); padding:2.5rem 2rem 1.5rem 2rem; min-width:320px; max-width:90vw; text-align:center; position:relative; display:flex; flex-direction:column; align-items:center;">
+            <div style="font-size:2rem; color:#d32f2f; font-weight:bold; margin-bottom:2.5rem;">Countdown Complete!</div>
+            <button id="popup-ok-btn" style="align-self:flex-end; margin-top:1.5rem; padding:0.5rem 1.5rem; background:#1976d2; color:#fff; border:none; border-radius:6px; font-size:1rem; cursor:pointer;">OK</button>
+          </div>
+        </div>
+        <!-- Audio elements for countdown and popup sounds -->
+        <audio id="tick-audio" src="sounds/tick.mp3" preload="auto"></audio>
+        <audio id="complete-audio" src="sounds/complete.mp3" preload="auto"></audio>
+      </div>
+    </section>
+    <section style="width:100vw; max-width:100%; background:rgba(255,255,255,0.92); padding:1.5rem 2rem 1.5rem 2rem; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+    <div style="max-width:700px; margin:0 auto; font-size:1.1rem; color:#333;">
+      <strong>About The Countdown Timer:</strong><br>
+      The Countdown Timer is a simple yet powerful tool to help you track time for any event or deadline. Set your custom date, personalize the look, and stay motivated as every second ticks by. Whether it's for a big launch, a birthday, or a daily goal, this timer keeps you focused and makes every moment count.
+    </div>
+  </section>
+      <!--import the js file-->
+      <script src="index.js"></script>
+  </body>
+</html>

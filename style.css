@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+h2 {
+    font-size: 5rem;
+    font-weight: bold;
+    padding: 3rem;
+}
+
+
+.coming-soon {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("./images/image1.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.light-theme {
+    background: #f5f5f5;
+    color: #222;
+}
+
+body.dark-theme {
+    background: #181a1b;
+    color: #f5f5f5;
+}
+
+.dark-theme .coming-soon {
+    background: #23272f;
+    background-image: none;
+}
+
+.theme-switcher {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 2000;
+    transition: background 0.3s, color 0.3s;
+}
+
+.light-theme .theme-switcher {
+    background: #fff;
+    color: #222;
+    border: 1px solid #222;
+}
+
+.countdown {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-bottom: 40%;
+}
+
+.day,
+.hour,
+.minute,
+.second {
+    font-size: 5rem;
+}
+
+.waiting {
+    height: 50vh;
+}
